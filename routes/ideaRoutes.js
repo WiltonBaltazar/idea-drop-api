@@ -29,6 +29,9 @@ router.get("/", (req, res) => {
     },
   ];
 
+  res.status(400);
+  throw new Error("Something went wrong");
+
   res.json(ideas);
 });
 
