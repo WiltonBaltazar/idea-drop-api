@@ -1,6 +1,6 @@
-import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -8,7 +8,43 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.get("/api/ideas", (req, res) => {
+  const ideas = [
+    {
+      id: 1,
+      title: "Idea 1",
+      description: "Description 1",
+    },
+    {
+      id: 2,
+      title: "Idea 2",
+      description: "Description 2",
+    },
+    {
+      id: 3,
+      title: "Idea 3",
+      description: "Description 3",
+    },
+    {
+      id: 4,
+      title: "Idea 4",
+      description: "Description 4",
+    },
+  ];
+
+  res.json(ideas);
+});
+
+app.post("/api/ideas", (req, res) => {
+const {title, description} = req.body;
+
+console.log(description);
+  res.send(title);
+});
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
