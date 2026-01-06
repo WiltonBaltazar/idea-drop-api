@@ -17,7 +17,8 @@ connectDB();
 
 //CORS Config
 const allowedOrigins = [
-  'http://localhost:3000'
+  'http://localhost:3000',
+  'https://idea-drop-api-uk2i.onrender.com'
 ]
 
 app.use(cors({
