@@ -17,7 +17,7 @@ connectDB();
 
 //CORS Config
 const allowedOrigins = [
-  'https://idea-drop-api-uk2i.onrender.com',
+  'https://idea-drop-ui-81ho.vercel.app',
   'http://localhost:3000'
 ]
 
